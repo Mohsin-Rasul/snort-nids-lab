@@ -50,4 +50,3 @@ The lab environment was rigorously tested using two isolated Virtual Machines:
 * **Advanced Analytics:** Expanding the SIEM integration with Splunk Enterprise and updating rules to detect complex application-layer attacks like SQL Injections.
 * **Encrypted Traffic Analysis:** Configuring SSL decryption to inspect HTTPS packet payloads.
 
-```
