@@ -1,34 +1,24 @@
-# IDS Lab Environment & Threat Hunting 🛡️
+# Intrusion Detection and Log Analysis Using Snort & Splunk 🛡️
 
 ## 📌 Project Overview
-This repository contains the configuration, documentation, and operational guidelines for a comprehensive **Intrusion Detection System (IDS) Lab Environment**. The project is designed to simulate real-world enterprise network architectures, providing a controlled environment for deploying, tuning, and testing various IDS solutions (such as Snort or Wazuh) and developing advanced threat hunting methodologies.
+This repository contains the configuration, implementation, and operational guidelines for a **Network Intrusion Detection System (NIDS)**. The project integrates **Snort** as the primary detection sensor to monitor network traffic for malicious activity in real-time, alongside **Splunk** for log indexing, visualization, and analysis. It serves as a lightweight, educational security tool designed to detect cyber-attacks and display them on a graphical dashboard for easy analysis.
 
-## 🚀 Features
-*   **Realistic Network Simulation:** A structured lab environment utilizing virtualized infrastructure to replicate enterprise network segments.
-*   **Intrusion Detection Integration:** Configurations for deploying and managing IDS sensors to monitor network traffic for malicious activity.
-*   **Threat Hunting Framework:** Detailed, step-by-step instructions for proactive threat hunting, anomaly detection, and incident response operations.
-*   **Log Aggregation & Analysis:** (If integrated) Setup for forwarding alerts and logs to a SIEM (e.g., Splunk) for centralized visibility and correlation.
-
-## 📂 Repository Structure
-*   📄 `Cyber Project.pdf` - The comprehensive project report detailing the architecture, implementation steps, testing phases, and analytical findings.
-*   📄 `Threat Hunting Instructions.odt` - Operational guide containing specific threat hunting playbooks, queries, and methodologies used within the lab.
-*   📄 `README.md` - This file.
-*   📄 `LICENSE` - Open-source licensing information.
+## 🚀 Features & Capabilities
+*   **Real-time Traffic Analysis:** Monitors network traffic and detects malicious patterns using signature-based detection.
+*   **Custom Rule Implementation:** Capable of detecting specific network threats, including ICMP DDoS attacks (Ping floods) and SSH Port Scanning.
+*   **Log Generation:** Automatically generates alerts in `alert_fast.txt` format upon detecting suspicious traffic.
+*   **Analysis Integration:** Formats structured log outputs for ingestion into SIEM tools like Splunk for visual categorization based on severity and type.
 
 ## 🛠️ Technologies & Tools
-*   **IDS/IPS:** Snort / Wazuh (or similar network/host-based IDS)
-*   **Infrastructure:** Virtualization platforms (VMware/VirtualBox), Linux Server Administration
-*   **Analysis:** Wireshark, SIEM tools (e.g., Splunk for log analysis)
-*   **Automation/Config:** Ansible (for provisioning and configuration management)
+*   **IDS Engine:** Snort++ 3.10.0.0
+*   **Virtualization:** VMware Workstation Pro (Host-Only configuration)
+*   **Sensor Environment:** Ubuntu Linux (Interface: `ens33`)
+*   **Attacker Environment:** Kali Linux
+*   **Attack Tools:** Nmap (Network Mapper), standard ICMP tools
 
-## 📖 Documentation
-For a deep dive into the theoretical background, network topology, implementation details, and evaluation metrics, please refer to the **[Cyber Project.pdf](./Cyber Project.pdf)**. 
+## 📂 Implementation Details
 
-To begin running threat hunting scenarios and analyzing simulated attacks, follow the playbooks outlined in the **[Threat Hunting Instructions.odt](./Threat Hunting Instructions.odt)**.
-
-## 👨‍💻 Author
-**Mohsin Rasul**
-*Cybersecurity Undergraduate | SOC Operations & Threat Intelligence Enthusiast*
-
----
-*This project was developed as part of academic research and hands-on practical exploration in cybersecurity defensive operations.*
+### 1. Snort Configuration
+The Snort engine runs in daemon mode (`-D`) listening on the `ens33` interface. Configuration is managed via the Lua configuration file and validated successfully upon deployment:
+```bash
+sudo snort -c /usr/local/etc/snort/snort.lua
