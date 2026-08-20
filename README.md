@@ -51,5 +51,3 @@ The lab environment was rigorously tested using two isolated Virtual Machines:
 * **Encrypted Traffic Analysis:** Configuring SSL decryption to inspect HTTPS packet payloads.
 
 ```
-
-```
