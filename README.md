@@ -4,13 +4,6 @@
 ## 📌 Project Overview
 This repository contains the configuration, implementation, and operational guidelines for a **Network Intrusion Detection System (NIDS)**. The project integrates **Snort** as the primary detection sensor to monitor network traffic for malicious activity in real-time, alongside **Splunk** for log indexing, visualization, and analysis. It serves as a lightweight, educational security tool designed to detect cyber-attacks and display them on a graphical dashboard for easy analysis.
 
-## 👥 Project Team
-Developed as a Bachelor of Cyber Security final year project at the **Capital University of Science & Technology, Islamabad (CUST)** by:
-*   **Mohsin Rasul** (BCY243024)
-*   **Junaid Ahmed** (BCY243053)
-*   **Hasnain Masood** (BCY243110)
-*   **Supervisor:** Mam Rafiya Tariq
-
 ## 🚀 Features & Capabilities
 *   **Real-time Traffic Analysis:** Monitors network traffic and detects malicious patterns using signature-based detection.
 *   **Custom Rule Implementation:** Capable of detecting specific network threats, including ICMP DDoS attacks (Ping floods) and SSH Port Scanning.
